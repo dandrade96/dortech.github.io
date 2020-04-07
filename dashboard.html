@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Control Panel</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+
+  <body>
+    <!-- github fork banner -->
+    
+    <ul id="slide-out" class="side-nav fixed z-depth-2">
+      <li>
+        <div class="userView">
+          <div class="background">
+            <img src="assets/img/photo1.png">
+          </div>
+          <a href="#!user"><img class="circle" src="assets/img/avatar04.png"></a>
+          <a href="#!name"><span class="white-text name">Welcome back,</span></a>
+          <a href="#!email"><span class="white-text email">user!</span></a>
+        </div>
+      </li>
+
+      <li>
+        <form class="sidebar-form">
+          <div class="input-group">
+            <input id="accounts" type="text" name="username" class="form-control" placeholder="Universal Search" autocomplete="off" />
+          </div>
+        </form>
+      </li>
+
+      <li class="active"><a  href="dashboard.html"><i class="material-icons purple-item">dashboard</i>Dashboard</a></li>
+      <li><div class="divider"></div></li>
+
+      <li><a class="subheader">Management</a></li>
+      <li><a href="tracker.html"><i class="material-icons purple-item">timer</i>Time Track</a></li>
+      <li><a href="cliente.html"><i class="material-icons purple-item">contacts</i>Costumer</a></li>
+      <li><a href="project.html"><i class="material-icons purple-item">dynamic_feed</i>Project</a></li>
+      <li><a href="package.html"><i class="material-icons purple-item">archive</i>Package</a></li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <div class="collapsible-header">
+            <a class="collapsible-header"><i class="material-icons purple-item">bar_chart</i>Report</a>
+          </div>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="HourReport.html">Hours Report</a></li>
+                <li><a href="summary.html">Summary Report</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="no-padding">
+        <ul class="collapsible collapsible-expandable">
+          <li class="no-padding">
+            <div class="collapsible-header">
+              
+              <a class="collapsible-header"><i class="material-icons purple-item">group</i> Team</a>
+            </div>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="HoursAnalysis.html">Hour Analysis</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="realeseuser.html">Realese User</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <!-- END MENU -->
+    <main>
+    <section class="content">
+      <div class="page-announce valign-wrapper"><a href="#" data-activates="slide-out" class="button-collapse valign hide-on-large-only"><i class="material-icons">menu</i></a><h1 class="page-announce-text valign">Dashboard </h1></div>
+      <!-- Start Boxes -->
+      <div class="row">
+        <div class="col l6 s12">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>420</h3>
+              <p>Hours Worked</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer" class="animsition-link">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+          </div><!-- ./col -->
+          <div class="col l6 s12">
+            <!-- small box -->
+            <div class="small-box bg-green">
+              <div class="inner">
+                <h3>69</h3>
+                <p>Price</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-cash"></i>
+              </div>
+              <a href="#" class="small-box-footer" class="animsition-link">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+            </div><!-- ./col -->
+            <!-- TABS START -->
+            <div class="row">
+              <div class="col s12">
+                <ul class="tabs">
+                  <li class="tab col s3"><a class="active" href="#test1">Week</a></li>
+                  <li class="tab col s3"><a href="#test2">Month</a></li>
+                  <li class="tab col s3 "><a href="#test3">Year</a></li>
+                  <li class="tab col s3"><a href="#test4">All Period</a></li>
+                </ul>
+              </div>
+              <div class="container">
+                <div id="test1" class="col s12"><canvas id="myChart" width="400" height="200"></canvas></div>
+                <div id="test2" class="col s12">Graphic Month</div>
+                <div id="test3" class="col s12">Graphic Year</div>
+                <div id="test4" class="col s12">Graphic All Period</div>
+              </div>
+            </div>
+            <!-- TABS END -->
+              <!-- TABLE START-->
+                
+            <!-- TABLE END -->
+          </div>
+        </section>
+        </main>
+        
+
+        <!-- So this is basically a hack, until I come up with a better solution. autocomplete is overridden
+        in the materialize js file & I don't want that.
+        -->
+        <!-- Yo dawg, I heard you like hacks. So I hacked your hack. (moved the sidenav js up so it actually works) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <!-- START CHART -->
+        <script>
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                  datasets: [{
+                      label: '# of Votes',
+                      data: [12, 19, 3, 5, 2, 3],
+                      backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(255, 206, 86, 0.2)',
+                          'rgba(75, 192, 192, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+                          'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                          'rgba(255, 99, 132, 1)',
+                          'rgba(54, 162, 235, 1)',
+                          'rgba(255, 206, 86, 1)',
+                          'rgba(75, 192, 192, 1)',
+                          'rgba(153, 102, 255, 1)',
+                          'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero: true
+                          }
+                      }]
+                  }
+              }
+          });
+          </script>
+        <!-- END CHART -->
+        <script>
+        // Hide sideNav
+        $('.button-collapse').sideNav({
+          
+          menuWidth: 300, // Default is 300
+          edge: 'left', // Choose the horizontal origin
+          draggable: true // Choose whether you can drag to open on touch screens
+          });
+          $(document).ready(function(){
+          $('.tooltipped').tooltip({delay: 50});
+          });
+          $('select').material_select();
+          $('.collapsible').collapsible();
+          </script>
+          <div class="fixed-action-btn horizontal tooltipped" data-position="top" dattooltipped" data-position="top" data-delay="50" data-tooltip="Quick Links">
+            <a class="btn-floating btn-large red">
+              <i class="large material-icons">settings</i>
+            </a>
+            <ul>
+              <li><a class="btn-floating blue darken-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Support" href="#"><i class="material-icons">headset_mic</i></a></li>
+              <li><a class="btn-floating yellow tooltipped" data-position="top" data-delay="50" data-tooltip="Profile" href="#"><i class="material-icons">person</i></a></li>
+              <li><a class="btn-floating red tooltipped" data-position="top" data-delay="50" data-tooltip="Exit" href="#"><i class="material-icons">power_settings_new</i></a></li>
+             <!-- <li><a class="btn-floating yellow darken-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Staff Applications" href="#"><i class="material-icons">format_quote</i></a></li>
+              <li><a class="btn-floating green tooltipped" data-position="top" data-delay="50" data-tooltip="Name Guidelines" href="#"><i class="material-icons">publish</i></a></li>
+              <li><a class="btn-floating blue tooltipped" data-position="top" data-delay="50" data-tooltip="Issue Tracker" href="#"><i class="material-icons">attach_file</i></a></li> -->
+            </ul>
+          </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      </body>
+    </html>
